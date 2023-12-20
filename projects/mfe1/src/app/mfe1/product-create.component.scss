@@ -1,9 +1,13 @@
 .container {
+  margin-left: 36px;
+  margin-bottom: 36px;
+  border-bottom: solid 1px #ccc;
+}
+
+.form-container {
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 4;
   grid-gap: 16px;
   padding: 16px;
-  margin-bottom: 3em;
-  border-bottom: solid 1px #ccc;
 }

@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
-import { Mfe2Component } from './mfe2.component';
+import { ToDoListComponent } from './todo-list.component';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
     path: '',
-    component: Mfe2Component,
+    component: ToDoListComponent,
   },
 ];
 

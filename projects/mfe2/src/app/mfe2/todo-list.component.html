@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Microfrontend 2</h2>
+
+  <h3>To Do</h3>
+
+  <div>
+    <div *ngFor="let p of store.todos()" class="list-container">
+      <div>
+        {{ p.title }}
+      </div>
+      <div>
+        {{ p.completed ? "Competed" : "Not completed" }}
+      </div>
+      <div>
+        <button (click)="store.markComplete(p.id)">Mark Complete</button>
+      </div>
+      <div>
+        <button (click)="store.removeToDo(p.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
