@@ -1,11 +1,18 @@
 import { RouterModule, Routes } from '@angular/router';
-import { Mfe1Component } from './mfe1.component';
+import { ProductListComponent } from './product-list.component';
 import { NgModule } from '@angular/core';
+import { ProductCreateComponent } from './product-create.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: Mfe1Component,
+    component: ProductListComponent,
+    children: [
+      {
+        path: 'create',
+        component: ProductCreateComponent,
+      },
+    ],
   },
 ];
 

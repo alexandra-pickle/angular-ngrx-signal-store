@@ -1,0 +1,18 @@
+<h4>Microfrontend MFE 1 works</h4>
+<a href="mfe1/create">Add new product</a>
+<router-outlet></router-outlet>
+<h4>Products</h4>
+
+<div>
+  <div *ngFor="let p of store.products()" class="container">
+    <div>
+      {{ p.title }}
+    </div>
+    <div>
+      {{ p.price | currency }}
+    </div>
+    <div>
+      <button (click)="store.removeProduct(p.id)">Delete</button>
+    </div>
+  </div>
+</div>
