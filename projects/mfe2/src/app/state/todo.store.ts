@@ -10,14 +10,14 @@ export const ToDoStore = signalStore(
     const toDoService = inject(ToDoService);
 
     return {
-      removeToDo: (toDoId: number) => {
-        patchState(state, {
-          todos: state.todos().filter((x) => x.id !== toDoId),
-        });
-      },
       load: () => {
         return toDoService.getToDos().subscribe((response: ToDo[]) => {
           patchState(state, { todos: response });
+        });
+      },
+      removeToDo: (toDoId: number) => {
+        patchState(state, {
+          todos: state.todos().filter((x) => x.id !== toDoId),
         });
       },
       markComplete: (toDoId: number) => {

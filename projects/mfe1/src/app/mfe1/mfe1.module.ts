@@ -7,6 +7,7 @@ import { ProductService } from './product.service';
 import { ProductListComponent } from './product-list.component';
 import { ProductCreateComponent } from './product-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShellStore } from 'projects/shell/src/app/shell.store';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   declarations: [ProductListComponent, ProductCreateComponent],
-  providers: [ProductService, ProductStore],
+  providers: [ProductService, ProductStore, ShellStore],
 })
 export class Mfe1Module {}

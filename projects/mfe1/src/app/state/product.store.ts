@@ -20,19 +20,18 @@ export const ProductStore = signalStore(
   withComputed((state) => {
     return { products: state.products };
   }),
-  withHooks({ onInit(store) {} }),
   withMethods((state) => {
     const productService = inject(ProductService);
 
     return {
-      removeProduct: (prductId: string) => {
-        patchState(state, {
-          products: state.products().filter((x) => x.id !== prductId),
-        });
-      },
       load: () => {
         return productService.getProducts().subscribe((response: Product[]) => {
           patchState(state, { products: response });
+        });
+      },
+      removeProduct: (prductId: string) => {
+        patchState(state, {
+          products: state.products().filter((x) => x.id !== prductId),
         });
       },
       addNewProduct: (product: Product) => {
@@ -41,5 +40,6 @@ export const ProductStore = signalStore(
         });
       },
     };
-  })
+  }),
+  withHooks({ onInit(store) {} })
 );
