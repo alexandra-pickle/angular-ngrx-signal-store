@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, delay, map } from 'rxjs';
 import { Product } from './product.model';
 
 @Injectable({
@@ -10,6 +10,8 @@ export class ProductService {
   constructor(private readonly httpClient: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products');
+    return this.httpClient
+      .get<Product[]>('https://fakestoreapi.com/products')
+      .pipe(delay(3000));
   }
 }

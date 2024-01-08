@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list.component';
 import { ProductCreateComponent } from './product-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShellStore } from 'projects/shell/src/app/shell.store';
+import { SpinnerComponent } from 'projects/shell/src/app/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ShellStore } from 'projects/shell/src/app/shell.store';
     Mfe1RoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SpinnerComponent,
   ],
   declarations: [ProductListComponent, ProductCreateComponent],
   providers: [ProductService, ProductStore, ShellStore],
